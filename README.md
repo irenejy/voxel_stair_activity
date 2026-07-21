@@ -1,1 +1,16 @@
 # voxel_stair_activity
+
+## Running the Code
+I would recommend stepping through the cells in the notebook file, as I was also in the notebook format while developing this solution. The `video_folder` variable will need to be updated to reflect the file path at which the video files are.
+
+The output of running the `batch_process` function will be a CSV file, where the columns are the name of the video file, the detected status, and the start and end timestamps of these statuses. 
+
+## My Development Process/Reasoning
+I chose to use a motion detection approach because out of some of the other ideas I had, it was the quickest to implement. I made some improvements to this approach, such as using a polygon to identify the stairs in the frame rather than a rectangle and experimenting with various parameters, like the background subtractor and the motion threshold. 
+
+In terms of evaluation, the quickest idea I ended up using was to randomly choose 5 videos that were relatively short and manually check the outputted CSV results with the video footage. 
+
+## Future Directions
+Maybe it's not necessary to detect motion to define if a stair is idle or not. Instead, it could be sufficient to just detect if people are *on* the stairs, rather than is something moving on the stairs. This would make my approach more robust because people could technically stop and chat on the stairs, which would probably be classified as "idle" with my current approach. 
+
+I also think my approach works specifically for this dataset, but later on if we add more cameras of different scenes, it could be tedious to find the polygon that defines the area of interest for each camera. Instead, maybe we could also leverage computer vision to find the stairs in the first frame of the video. This would eliminate manually defining the polygons.
