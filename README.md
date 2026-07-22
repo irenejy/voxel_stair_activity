@@ -1,7 +1,7 @@
 # voxel_stair_activity
 
 ## Running the Code
-I would recommend stepping through the cells in the notebook file, as I was also using the notebook format while developing this solution. The `video_folder` variable will need to be updated to reflect the file path at which the video files are. (The Kaggle link to dataset is [here](https://www.kaggle.com/datasets/vincyjoel/cctv-01?resource=download).
+I would recommend stepping through the cells in the notebook file, as I was also using the notebook format while developing this solution. The `video_folder` variable will need to be updated to reflect the file path at which the video files are. (The Kaggle link to dataset is [here](https://www.kaggle.com/datasets/vincyjoel/cctv-01?resource=download).)
 
 The output of running the `batch_process` function will be a CSV file, where the columns are the name of the video file, the detected status, and the start and end timestamps of these statuses. An example output is included (stair_usage_log.csv), which was generated from applying my code to all the videos that had stairs in them.
 
