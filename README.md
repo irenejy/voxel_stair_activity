@@ -1,12 +1,12 @@
 # voxel_stair_activity
 
 ## Running the Code
-I would recommend stepping through the cells in the notebook file, as I was also in the notebook format while developing this solution. The `video_folder` variable will need to be updated to reflect the file path at which the video files are.
+I would recommend stepping through the cells in the notebook file, as I was also using the notebook format while developing this solution. The `video_folder` variable will need to be updated to reflect the file path at which the video files are.
 
-The output of running the `batch_process` function will be a CSV file, where the columns are the name of the video file, the detected status, and the start and end timestamps of these statuses. 
+The output of running the `batch_process` function will be a CSV file, where the columns are the name of the video file, the detected status, and the start and end timestamps of these statuses. An example output is included (stair_usage_log.csv), which was generated from applying my code to all the videos that had stairs in them.
 
 ## My Development Process/Reasoning
-I chose to use a motion detection approach because out of some of the other ideas I had, it was the quickest to implement. I made some improvements to this approach, such as using a polygon to identify the stairs in the frame rather than a rectangle and experimenting with various parameters, like the background subtractor and the motion threshold. 
+I chose to use a motion detection approach using differences between frames because out of some of the other ideas I had, it was the quickest to implement. I made some improvements to this approach, such as using a polygon to identify the stairs in the frame rather than a rectangle and experimenting with various parameters, like the background subtractor and the motion threshold. 
 
 In terms of evaluation, the quickest idea I ended up using was to randomly choose 5 videos that were relatively short and manually check the outputted CSV results with the video footage. 
 
