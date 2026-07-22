@@ -6,7 +6,9 @@ I would recommend stepping through the cells in the notebook file, as I was also
 The output of running the `batch_process` function will be a CSV file, where the columns are the name of the video file, the detected status, and the start and end timestamps of these statuses. An example output is included (stair_usage_log.csv), which was generated from applying my code to all the videos that had stairs in them.
 
 ## My Development Process/Reasoning
-I chose to use a motion detection approach using differences between frames because out of some of the other ideas I had, it was the quickest to implement. I made some improvements to this approach, such as using a polygon to identify the stairs in the frame rather than a rectangle and experimenting with various parameters, like the background subtractor and the motion threshold. 
+I chose to use a motion detection approach using differences between frames because out of some of the other ideas I had, it was the quickest to implement. I made some improvements to this approach, such as using a polygon to identify the stairs in the frame rather than a rectangle and experimenting with various parameters, like the background subtractor and the motion threshold. Additionally, the main ask that Dana was highlighting was a way to know when our stairs are actually being used vs. when they're free. I thought this approach would at least be a good initial signal for determining when stairs are idle. 
+
+I chose to create a CSV file that shows the idle/in-use times because I thought it would be most flexible for building out a usable solution. If they wanted to, Dana's team could work directly with the CSV file or plug it into any of their existing solutions, as it's a pretty universal format of data. Another option I'm envisioning is that there is some type of logging app or dashboard app that highlights the idle times. We could ingest the CSV file into the app and create records/entities of these idle intervals. 
 
 In terms of evaluation, the quickest idea I ended up using was to randomly choose 5 videos that were relatively short and manually check the outputted CSV results with the video footage. 
 
